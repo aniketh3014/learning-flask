@@ -10,10 +10,10 @@
             </tr>
         </thead>
         <tbody>
-            {% for participent in registered %}
+            {% for human in registered %}
                 <tr>
-                    <td> {{ human }} </td>
-                    <td> {{ human }} </td>
+                    <td> {{ human.name }} </td>
+                    <td> {{ human.sport }} </td>
                 </tr>
             {% endfor %}
         </tbody>
