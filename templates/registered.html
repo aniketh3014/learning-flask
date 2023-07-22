@@ -1,9 +1,21 @@
 {% extends "layout.html" %}
 
 {% block body %}
-    <ul>
-        {% for name in registered %}
-            <li> {{ name }} is registered for {{ registered[name] }} </li>
-        {% endfor %}
-    </ul>
+    <h1>Registrants</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Sport</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for participent in registered %}
+                <tr>
+                    <td> {{ human }} </td>
+                    <td> {{ human }} </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
