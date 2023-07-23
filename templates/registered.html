@@ -5,6 +5,7 @@
     <table>
         <thead>
             <tr>
+                <th>Id</th>
                 <th>Name</th>
                 <th>Sport</th>
             </tr>
@@ -12,8 +13,9 @@
         <tbody>
             {% for human in registered %}
                 <tr>
-                    <td> {{ human.name }} </td>
-                    <td> {{ human.sport }} </td>
+                    <td> {{ human['Id'] }} </td>
+                    <td> {{ human['name'] }} </td>
+                    <td> {{ human['sport'] }} </td>
                 </tr>
             {% endfor %}
         </tbody>

@@ -33,6 +33,8 @@ def register():
 @app.route("/registered")
 def registered():
     cur.execute("SELECT * FROM registrants")
-    regi = cur.fetchall()
-    db.close()
-    return render_template("registered.html", registered=regi)
+    rows = cur.fetchall()
+    columns = ['Id', 'name', 'sport']
+    result_list = [dict(zip(columns, row)) for row in rows]
+    db.close
+    return render_template("registered.html", registered=result_list)
