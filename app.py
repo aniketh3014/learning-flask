@@ -9,13 +9,24 @@ registrants = {}
 
 SPORTS = [
     "Basketball",
-    "soccare",
+    "soccer",
     "cricket"
 ]
 
 @app.route("/")
 def index():
     return render_template("index.html", sports=SPORTS)
+
+@app.route("/deregister", methods=["POST"])
+def deregister():
+    id = request.form.get("id")
+    if id:
+        cur.execute("DELETE FROM registrants WHERE id=?", id)
+        db.commit()
+    return redirect("/registered")
+
+
+
 
 @app.route("/register", methods=["POST"])
 def register():
